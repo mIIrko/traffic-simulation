@@ -1,0 +1,156 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+
+/* #################################################### */
+
+/* the dots in the background */
+body {
+    background-size: 40px 40px;
+    background-image: radial-gradient(circle, #000000 1px, rgba(0, 0, 0, 0) 1px);
+}
+
+/* the space for the heading */
+header {
+    height: 25%;
+}
+
+/* the heading at the page top*/
+header h1 {
+    color: #334152;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 3em;
+    text-align: center;
+    margin: 0;
+    padding: 1em;
+    background-color: white;
+}
+
+button {
+    background-color: #334152;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 0.2em;
+    cursor: pointer;
+    font-family: 'Roboto Mono', monospace;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+#controls {
+    background-color: #049d93;
+    text-align: center;
+}
+
+/* the first row with the inputs for variables and constraints */
+#inputelements {
+    width: 75%;
+    padding: 2em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#inputelements label {
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+}
+
+#inputelements a label  {
+    color: #334152;
+    text-decoration: none;
+    cursor: help;
+}
+
+#inputelements input {
+    padding: 0.4em;
+    border-radius: 0.2em;
+    border: none;
+    width: 3em;
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+}
+
+#inputelements button {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.row {
+    width: 75%;
+    padding-top: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.row .fieldset {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+#canvasWrapper {
+    width: 100%;
+    text-align:center;
+    padding: 0.7em;
+}
+
+table {
+    display: inline;
+}
+
+
+td {
+    padding: 0.2em;
+    text-align: center;
+    min-width: 1em;
+    height: 1em;
+    font-size: small;
+}
