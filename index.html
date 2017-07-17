@@ -52,19 +52,40 @@
                 <label for="carsInput">Amount of cars (calculated)</label>
                 <input id="carsInput" disabled="disabled"/>
             </span>
-        </div>
 
+
+            <span class="inputfield">
+                <label for="colorInput">Color mode</label>
+                <select id="colorInput">
+                    <option value="black">black</option>
+                    <option value="color">color</option>
+                    <option value="speed">depend on speed</option>
+                </select>
+            </span>
+
+        </div>
         <div class="row">
             <button id="startButton">start Simulation</button>
         </div>
     </div>
 
-    <div id="avgSpeedWrapper">
-        <div>
-            <p>
-                Average Speed
-            </p>
-            <input id="avgSpeed" value="3,14">
+    <div id="circles">
+        <div id="avgFlowWrapper">
+            <div>
+                <p>
+                    Average Flow
+                </p>
+                <input id="avgFlow" value="0,6">
+            </div>
+        </div>
+
+        <div id="avgSpeedWrapper">
+            <div>
+                <p>
+                    Average Speed
+                </p>
+                <input id="avgSpeed" value="3,14">
+            </div>
         </div>
     </div>
 </section>

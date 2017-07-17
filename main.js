@@ -7,9 +7,9 @@ function startSimulation() {
     maxSpeed = parseInt(document.getElementById("maxSpeedInput").value);
     generations = parseInt(document.getElementById("generationsInput").value);
     amountOfCars = Math.floor(cells * density);
-    // set the calculted amount of cars
+    // set the calculated amount of cars
     document.getElementById("carsInput").value = amountOfCars;
-
+    var colorMode = document.getElementById("colorInput").value;
     var cars = [];
     var table = document.createElement("table");
 
@@ -25,9 +25,10 @@ function startSimulation() {
 
 
     document.getElementById("canvasWrapper").appendChild(table);
-    Drawer.plot(cells, cars, maxSpeed);
+    Drawer.plot(cells, cars, colorMode);
 
     var averageSpeed = 0;
+    var averageFlow = 0;
 
     for (var j = 0; j < generations; j++) {
 
@@ -43,17 +44,28 @@ function startSimulation() {
         }
 
         averageSpeedForGeneration = averageSpeedForGeneration / cars.length;
-        averageSpeed += averageSpeedForGeneration;
+        var averageFlowForGeneration = Math.round(100 * averageSpeedForGeneration * density) / 100;
 
-        var newRow = Drawer.plot(cells, cars);
+        averageSpeed += averageSpeedForGeneration;
+        averageFlow += averageFlowForGeneration;
+
+
+        var newRow = Drawer.plot(cells, cars, colorMode);
         table.appendChild(newRow);
     }
 
 
     averageSpeed = averageSpeed / generations;
+    averageFlow = averageFlow / generations;
+
     document.getElementById("avgSpeed").value = averageSpeed.toFixed(2);
     document.getElementById("avgSpeedWrapper").style.visibility = "visible";
     document.getElementById("avgSpeedWrapper").style.opacity = 1;
+
+    document.getElementById("avgFlow").value = averageFlow.toFixed(2);
+    document.getElementById("avgFlowWrapper").style.visibility = "visible";
+    document.getElementById("avgFlowWrapper").style.opacity = 1;
+
     scrollToResult();
 
 }

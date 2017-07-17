@@ -6,7 +6,7 @@ var Drawer = (function () {
      * @param cars
      * @return {Element}
      */
-    function plot(cells, cars) {
+    function plot(cells, cars, colormode) {
 
         // create a new row
         var row = document.createElement("tr");
@@ -23,11 +23,19 @@ var Drawer = (function () {
             var carPosition = cars[j].position;
             var carCell = row.cells[carPosition];
             // paint the cell with the specific color
-            carCell.style.backgroundColor = cars[j].color;
-            carCell.innerHTML = cars[j].speed;
 
-            //carCell.style.backgroundColor = getColorFromSpeed(cars[j].speed);
-            //carCell.innerHTML = cars[j].id;
+            if (colormode === "black") {
+                carCell.style.backgroundColor = "#98a09c";
+                if (cars[j].id === 5) {
+                    carCell.style.backgroundColor = "#de0622";
+                }
+            } else if (colormode === "speed") {
+                carCell.style.backgroundColor = getColorFromSpeed(cars[j].speed);
+            } else {
+                // default is color mode
+                carCell.style.backgroundColor = cars[j].color;
+            }
+            carCell.innerHTML = cars[j].speed;
         }
 
         return row;
@@ -55,7 +63,8 @@ var Drawer = (function () {
 
 
     return {
-      plot: plot
+        plot: plot
     };
 
-})();
+})
+();

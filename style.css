@@ -47,7 +47,6 @@ q:before, q:after {
     content: none;
 }
 
-
 /* #################################################### */
 
 /* the dots in the background */
@@ -114,13 +113,14 @@ button:hover {
     font-family: 'Roboto Mono', monospace;
 }
 
-#inputelements a label  {
+#inputelements a label {
     color: #334152;
     text-decoration: none;
     cursor: help;
 }
 
-#inputelements input {
+#inputelements input,
+#inputelements select {
     padding: 0.4em;
     border-radius: 0.2em;
     border: none;
@@ -128,6 +128,14 @@ button:hover {
     text-align: center;
     font-family: 'Roboto Mono', monospace;
 }
+
+#inputelements select {
+    width: 11em;
+    font-family: 'Roboto Mono', monospace;
+    text-align: right;
+    background-color: white;
+}
+
 
 #inputelements button {
     font-family: 'Roboto Mono', monospace;
@@ -149,7 +157,7 @@ button:hover {
 }
 
 #canvasWrapper {
-    text-align:center;
+    text-align: center;
     padding: 0.7em;
 }
 
@@ -172,7 +180,6 @@ table tr:last-child {
     border-bottom: 1px solid black;
 }
 
-
 td {
     padding: 0.2em;
     text-align: center;
@@ -182,11 +189,13 @@ td {
 
 }
 
-#avgSpeedWrapper {
-    position: relative;
-    float: right;
-    bottom: 200px;
-    right: 50px;
+#circles {
+    position: absolute;
+    right: 3%;
+    top: 250px;
+}
+
+#avgSpeedWrapper, #avgFlowWrapper {
 
     background-color: #ccd6d5;
     border-radius: 100%;
@@ -195,26 +204,31 @@ td {
     width: 100px;
     height: 100px;
 
-    display:table;
+    display: table;
 
-    visibility: hidden;
+    /*visibility: hidden;*/
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
 }
 
-#avgSpeedWrapper div {
+#avgFlowWrapper {
+    bottom: 285px;
+    right: 50px;
+    margin-bottom: 10px;
+}
+
+#avgSpeedWrapper div, #avgFlowWrapper div {
     display: table-cell;
     vertical-align: middle;
 }
 
-#avgSpeed {
+#avgSpeed, #avgFlow {
 
     width: 50px;
     margin-left: auto;
     margin-right: auto;
 
     text-align: center;
-
 
     background-color: transparent;
     border: none;
