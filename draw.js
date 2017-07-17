@@ -1,5 +1,11 @@
 var Drawer = (function () {
 
+    /**
+     *
+     * @param cells
+     * @param cars
+     * @return {Element}
+     */
     function plot(cells, cars) {
 
         // create a new row
@@ -7,7 +13,7 @@ var Drawer = (function () {
 
         for (var i = 0; i < cells; i++) {
             var emptyCell = document.createElement("td");
-            emptyCell.style.backgroundColor = "grey";
+            emptyCell.style.backgroundColor = "white";
             //cell.innerHTML = " ---- ";
             row.appendChild(emptyCell);
         }
@@ -19,10 +25,34 @@ var Drawer = (function () {
             // paint the cell with the specific color
             carCell.style.backgroundColor = cars[j].color;
             carCell.innerHTML = cars[j].speed;
+
+            //carCell.style.backgroundColor = getColorFromSpeed(cars[j].speed);
+            //carCell.innerHTML = cars[j].id;
         }
 
         return row;
     }
+
+    /**
+     * delivers a color depending of the
+     * current speed of a car relative to the max speed;
+     *
+     * value = 0 is green
+     * value = 100 is red
+     *
+     * https://stackoverflow.com/a/17268489
+     *
+     * @param speed
+     * @return {string}
+     */
+    function getColorFromSpeed(speed) {
+
+        var value = Math.abs((speed / maxSpeed) - 100);
+        //value from 0 to 1
+        var hue = ((1 - value) * 120).toString(10);
+        return ["hsl(", hue, ",100%,50%)"].join("");
+    }
+
 
     return {
       plot: plot

@@ -10,8 +10,8 @@
 
 <header>
 
-    <h1>Nagel-Schreckenberg-Modell</h1>
-
+    <h1>Nagel-Schreckenberg-Model</h1>
+    <h2>one lane traffic</h2>
 </header>
 
 <section id="controls">
@@ -20,42 +20,51 @@
 
         <div class="row">
             <span class="inputfield">
-                <label for="generationsInput">Anzahl Generationen</label>
-                <input id="generationsInput" type="number" min="0" max="1000" value="50"/>
+                <label for="generationsInput">Generations</label>
+                <input id="generationsInput" type="number" min="0" max="1000" value="200"/>
             </span>
 
             <span class="inputfield">
-                <label for="densityInput">Verkehrsdichte</label>
+                <label for="densityInput">Traffic density</label>
                 <input id="densityInput" type="number" step="0.1" min="0.0" max="1.0" value="0.4"/>
             </span>
 
             <span class="inputfield">
-                <label for="cellsInput">Anzahl der Zellen</label>
-                <input id="cellsInput" type="number" min="0" max="100" value="50"/>
+                <label for="cellsInput">Cells</label>
+                <input id="cellsInput" type="number" min="0" max="500" value="300"/>
             </span>
         </div>
         <div class="row">
 
             <span class="inputfield">
-                <label for="dawdleInput">Trödel-Wahrscheinlichkeit</label>
+                <label for="dawdleInput">Dawdle Probability</label>
                 <input id="dawdleInput" type="number" step="0.1" min="0.0" max="1.0" value="0.3"/>
             </span>
 
             <span class="inputfield">
-                <label for="maxSpeedInput">Maximal-Geschwindigkeit</label>
+                <label for="maxSpeedInput">Max Speed</label>
                 <input id="maxSpeedInput" type="number" min="0" max="20" value="5"/>
             </span>
         </div>
         <div class="row">
 
         <span class="inputfield">
-                <label for="carsInput">Anzahl der Autos (berechnet)</label>
-                <input id="carsInput" type="number" disabled="disabled"/>
+                <label for="carsInput">Amount of cars (calculated)</label>
+                <input id="carsInput" disabled="disabled"/>
             </span>
         </div>
 
         <div class="row">
-            <button id="startButton">Simulation starten</button>
+            <button id="startButton">start Simulation</button>
+        </div>
+    </div>
+
+    <div id="avgSpeedWrapper">
+        <div>
+            <p>
+                Average Speed
+            </p>
+            <input id="avgSpeed" value="3,14">
         </div>
     </div>
 </section>
@@ -72,5 +81,7 @@
     document.getElementById("startButton").addEventListener("click", startSimulation);
 
 </script>
+
+
 </body>
 </html>
