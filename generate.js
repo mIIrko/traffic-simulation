@@ -24,7 +24,7 @@ var Generator = (function () {
     function dawdle(cars, dawdleProbability) {
         for (var i = 0; i < cars.length; i++) {
             // (cars[i] > 0 was ist besser?)
-            if ((cars[i].speed > 1) && Math.random() < dawdleProbability) {
+            if ((cars[i].speed > 0) && Math.random() < dawdleProbability) {
                 cars[i].speed = cars[i].speed - 1;
             }
         }

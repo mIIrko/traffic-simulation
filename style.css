@@ -124,9 +124,10 @@ button:hover {
     padding: 0.4em;
     border-radius: 0.2em;
     border: none;
-    width: 3em;
+    width: 4em;
     text-align: center;
     font-family: 'Roboto Mono', monospace;
+    margin-right: 1em;
 }
 
 #inputelements select {
